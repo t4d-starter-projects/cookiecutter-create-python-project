@@ -21,5 +21,9 @@
         "--show-column-numbers",
         "--strict"
     ],
+    "[markdown]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 79,
+    },
     "python.linting.flake8Enabled": true
 }
