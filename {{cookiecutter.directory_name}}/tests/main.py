@@ -1,13 +1,13 @@
-import unittest
+from unittest import TestSuite, TextTestRunner
 
 from tests.test_sample import TestSample
 
-def suite():
+def suite() -> TestSuite:
 
-    suite = unittest.TestSuite()
+    suite = TestSuite()
     suite.addTest(TestSample())
     return suite
 
 if __name__ == '__main__':
-    runner = unittest.TextTestRunner()
+    runner = TextTestRunner()
     runner.run(suite())

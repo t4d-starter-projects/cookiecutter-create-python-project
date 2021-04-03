@@ -1,10 +1,10 @@
-import unittest
+from unittest import TestCase, main
 
-class TestSample(unittest.TestCase):
+class TestSample(TestCase):
 
-    def test_sample(self):
+    def test_sample(self) -> None:
 
         self.assertEqual(True, True)
 
 if __name__ == "__main__":
-    unittest.main()
+    main()

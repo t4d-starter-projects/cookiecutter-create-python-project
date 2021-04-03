@@ -1,7 +1,7 @@
 """ Main Module """
 
 
-def main():
+def main() -> None:
     """Main Function"""
 
 
