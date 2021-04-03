@@ -12,29 +12,30 @@ pool:
 steps:
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '3.7'
-  displayName: 'Use Python 3.7'
+    versionSpec: '3.9'
+  displayName: 'use python 3.9'
 
 - script: |
-    python -m pip install --upgrade pip
+    python -m pip install --upgrade pip setuptools wheel
     pip install -r requirements.txt
-  displayName: 'Install dependencies'
+  displayName: 'install dependencies'
 
 - script: |
-    python -m flake8 --exclude=venv,.git,__pycache__
-  displayName: 'lint the source code'
+    python -m pylint --max-line-length=79 --unsafe-load-any-extension=y --ignore=.git,venv,.vscode,__pycache__ src || exit 1
+  displayName: 'pylint'
 
 - script: |
-    python -m mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers --strict .
-  displayName: 'validate types'
+    python -m flake8 --exclude=venv,.git,__pycache__ || exit 1
+  displayName: 'flake8'
 
 - script: |
-    python -m coverage run -m unittest tests.main
-  displayName: 'unittest and code coverage'
+    python -m mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers --strict . || exit 1
+  displayName: 'mypy'
 
 - script: |
-    python -m coverage report --omit="venv/*,tests/*"
-  displayName: 'generate code coverage report'
+    python -m coverage run -m unittest src.tests.main
+  displayName: 'unittests'
 
-
-
+- script: |
+    python -m coverage report --fail-under=85 --omit="venv/*,src/tests/*"
+  displayName: 'code coverage report'
