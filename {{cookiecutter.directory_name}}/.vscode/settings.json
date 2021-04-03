@@ -8,7 +8,12 @@
         "--aggressive"
     ],
     "python.linting.enabled": true,
-    "python.linting.pylintEnabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintUseMinimalCheckers": false,
+    "python.linting.pylintArgs": [
+        "--max-line-length=79",
+        "--unsafe-load-any-extension=y"
+    ],
     "python.linting.mypyEnabled": true,
     "python.linting.mypyArgs": [
         "--ignore-missing-imports",
@@ -16,5 +21,5 @@
         "--show-column-numbers",
         "--strict"
     ],
-    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Enabled": true
 }
