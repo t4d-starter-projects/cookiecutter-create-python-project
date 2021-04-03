@@ -1,6 +1,9 @@
 {
-    "project_name": "new_python_project",
-    "project_desc": "A new project",
+    "project_name": "",
+    "project_feed": "",
+    "project_branch": "main",
+    "package_name": "",
+    "pacakge_desc": "A new package.",
     "author_name": "",
     "author_email": "",
     "author_url": ""
