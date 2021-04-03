@@ -1,8 +1,9 @@
 """Setup Package Module"""
 
+from pathlib import Path
 from setuptools import find_packages, setup
 
-HERE = pathlib.Path(__file__).parent
+HERE = Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 setup(

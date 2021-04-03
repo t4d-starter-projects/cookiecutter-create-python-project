@@ -117,13 +117,13 @@ To run the project in various ways, here are the commands:
 **Run the Main Module**
 
 ```bash
-python -m main
+python -m {{cookiecutter.package_name}}
 ```
 
 **Run the Pylint Linter**
 
 ```bash
-python -m pylint --max-line-length=79 --unsafe-load-any-extension=y --ignore=.git,venv,.vscode,__pycache__ src
+python -m pylint --max-line-length=79 --unsafe-load-any-extension=y --ignore=.git,venv,.vscode,__pycache__ {{cookiecutter.package_name}} tests
 ```
 
 **Run the Flake8 Linter**
@@ -135,19 +135,19 @@ python -m flake8 --exclude=venv,.git,__pycache__
 **Run the MyPy Linter**
 
 ```bash
-python -m mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers --strict .
+python -m mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers --strict --exclude venv .
 ```
 
 **Run the Unit Tests with Code Coverage**
 
 ```bash
-python -m coverage run -m unittest src.tests.main
+python -m coverage run -m unittest tests.__main__
 ```
 
 **Generate Code Coverage Report**
 
 ```bash
-python -m coverage report --omit="venv/*,tests/*"
+python -m coverage report --omit="venv/*,tests/*,setup.py"
 ```
 
 ## Extra
