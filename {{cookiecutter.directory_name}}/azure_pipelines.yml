@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
-- trunk
+- main # this should be updated to the primary branch of the repo
 
 pool:
   vmImage: ubuntu-18.04

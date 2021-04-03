@@ -41,7 +41,7 @@ Ensure it outputs the version you just installed.
 With Python installed, let's ensure we have the latest PIP package manager.
 
 ```bash
-python -m pip install --upgrade pip
+python -m pip install --upgrade pip setuptools wheel
 ```
 
 With PIP upgraded, now the Cookie Cutter package needs to be installed. From a terminal window, run the following command:
