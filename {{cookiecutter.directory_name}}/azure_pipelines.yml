@@ -21,6 +21,14 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
+    python -m flake8 --exclude=venv,.git,__pycache__
+  displayName: 'lint the source code'
+
+- script: |
+    python -m mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers --strict .
+  displayName: 'validate types'
+
+- script: |
     python -m coverage run -m unittest tests.main
   displayName: 'unittest and code coverage'
 
@@ -28,6 +36,5 @@ steps:
     python -m coverage report --omit="venv/*,tests/*"
   displayName: 'generate code coverage report'
 
-- script: |
-    mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers --strict .
-  displayName: 'generate code coverage report'
+
+
