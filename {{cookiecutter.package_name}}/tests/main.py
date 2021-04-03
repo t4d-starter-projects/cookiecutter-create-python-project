@@ -2,7 +2,7 @@
 
 from unittest import TestSuite, TextTestRunner
 
-from src.tests.test_sample import TestSample
+from tests.test_sample import TestSample
 
 
 def suite() -> TestSuite:

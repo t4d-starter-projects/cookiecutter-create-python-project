@@ -16,7 +16,7 @@ steps:
   displayName: 'install dependencies'
 
 - script: |
-    python -m pylint --max-line-length=79 --unsafe-load-any-extension=y --ignore=.git,venv,.vscode,__pycache__ src || exit 1
+    python -m pylint --max-line-length=79 --unsafe-load-any-extension=y --ignore=.git,venv,.vscode,__pycache__ {{cookiecutter.package_name}} || exit 1
   displayName: 'pylint'
 
 - script: |
@@ -24,13 +24,13 @@ steps:
   displayName: 'flake8'
 
 - script: |
-    python -m mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers --strict . || exit 1
+    python -m mypy --ignore-missing-imports --follow-imports=silent --show-column-numbers --strict --exclude venv . || exit 1
   displayName: 'mypy'
 
 - script: |
-    python -m coverage run -m unittest src.tests.main
+    python -m coverage run -m unittest tests.main
   displayName: 'unittests'
 
 - script: |
-    python -m coverage report --fail-under=85 --omit="venv/*,src/tests/*"
+    python -m coverage report --fail-under=85 --omit="venv/*,tests/*"
   displayName: 'code coverage report'

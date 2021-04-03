@@ -2,7 +2,7 @@
 
 from unittest import TestCase, main
 
-from src.some_pkg.some_mod import do_it
+from {{cookiecutter.package_name}}.some_pkg.some_mod import do_it
 
 
 class TestSample(TestCase):
