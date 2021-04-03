@@ -101,7 +101,7 @@ source ./venv/bin/activate
 8. Upgrade PIP for the virtual environment.
 
 ```bash
-python -m pip install --upgrade
+python -m pip install --upgrade pip setuptools wheel
 ```
 
 9. Install the packages listed in the `requirements.txt` file.

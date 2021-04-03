@@ -1,3 +1,7 @@
 {
-    "directory_name": "new_python_project"
+    "project_name": "new_python_project",
+    "project_desc": "A new project",
+    "author_name": "",
+    "author_email": "",
+    "author_url": ""
 }
