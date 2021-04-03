@@ -122,22 +122,8 @@ python -m main
 
 **Run the Pylint Linter**
 
-The Pylint linter needs an `__init__.py` file in the root project folder to work property. So the file is added, pylint is executed, then the file is removed.
-
-#### On Windows PowerShell
-
 ```bash
-New-Item -ItemType file __init__.py
-python -m pylint --max-line-length=79 --unsafe-load-any-extension=y --unsafe-load-any-extension=y --ignore=.git,venv,.vscode,__pycache__ $(pwd)
-Remove-Item __init__.py
-```
-
-#### On macOS, Linux, Bash/Zsh
-
-```bash
-touch __init__.py
-python -m pylint --max-line-length=79 --unsafe-load-any-extension=y --unsafe-load-any-extension=y --ignore=.git,venv,.vscode,__pycache__ $(pwd)
-rm __init__.py
+python -m pylint --max-line-length=79 --unsafe-load-any-extension=y --ignore=.git,venv,.vscode,__pycache__ src
 ```
 
 **Run the Flake8 Linter**
@@ -155,7 +141,7 @@ python -m mypy --ignore-missing-imports --follow-imports=silent --show-column-nu
 **Run the Unit Tests with Code Coverage**
 
 ```bash
-python -m coverage run -m unittest tests.main
+python -m coverage run -m unittest src.tests.main
 ```
 
 **Generate Code Coverage Report**
