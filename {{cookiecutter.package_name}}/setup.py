@@ -11,7 +11,7 @@ setup(
     version="0.1.0",
     description="{{cookiecutter.package_desc}}",
     long_description=README,
-    long_description_content_type="text/markdown",    
+    long_description_content_type="text/markdown",
     url="{{cookiecutter.author_url}}",
     license="MIT",
     author="{{cookiecutter.author_name}}",
